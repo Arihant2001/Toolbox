@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Temperature</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="icon" href="https://img.icons8.com/nolan/96/temperature.png">
+        <style>
+            @media(max-width: 599.99px){
+                .grid-container {
+                    display: grid;
+                    justify-content: left;
+                    grid-template-columns: 70% 30%;
+                }
+                input[type='number']{
+                    height: 40px;
+                    width: 100%;
+                    border-radius: 10px;
+                    font-size: larger;
+                }
+                select{
+                    height: 40px;
+                    width: 60%;
+                    border-radius: 10px;
+                    background-color: white;
+                    font-size: larger;
+                }
+                .grid-container1 {
+                    display: grid;
+                    width: 100%;
+                    grid-template-columns: 50% 50%;
+                }
+                .grid{
+                    display: grid;
+                    justify-content: center;
+                    row-gap: 5px;
+                    grid-template-columns: 100%;
+                }
+                .card2 {
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                    padding: 15px;
+                    text-align: center;
+                    font-size: large;
+                    width: 100%;
+                    border-radius: 13px;
+                    background-color: white;
+                }
+            }
+            @media(min-width: 600px){
+                .grid-container {
+                    display: grid;
+                    justify-content: center;
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto;
+                }
+                .grid-item {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+                .grid-container1 {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                }
+                .grid{
+                    display: grid;
+                    justify-content: center;
+                    row-gap: 5px;
+                }
+                .card2 {
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                    padding: 10px;
+                    font-size: 15px;
+                    width: 250px;
+                    border-radius: 10px;
+                    background-color: white;
+                    text-align: center;
+                }
+                input[type='number']{
+                    height: 30px;
+                    width: 115px;
+                    border-radius: 10px;
+                }
+                select{
+                    height: 30px;
+                    width: 115px;
+                    border-radius: 10px;
+                    background-color: white;
+                }
+            }
+            .grid-item1 {
+                text-align: left;
+                font-weight: bold;
+            }
+            .grid-item2{
+                text-align: right;
+                font-weight: bold;
+            }
+            .card2:hover {
+                box-shadow: 0 8px 8px 0 black;
+                cursor: default;
+            }
+        </style>
+    </head>
+    <body style="background-color: plum;align-content: center;padding: 7px;">
+        <h1 style="color: black;text-align: center;padding: 10px;font-size: xx-large;"><b>Temperature</b></h1>
+        <div class="grid-container">
+            <div class="grid-item" style="font: larger;">
+                <select id="tptemp" onchange="calculate(tptemp,temp)">
+                    <option value="ctemp">Celsius &#176C</option>
+                    <option value="ftemp">Fahrenheit &#176F</option>
+                    <option value="ktemp">Kelvin K</option>
+                    <option value="rtemp">Rankine &#176R</option>
+                    <option value="retemp">Reaumur &#176Re</option>
+                </select>
+            </div>
+            <div class="grid-item" style="font: larger;"><input type="number" id="temp" oninput="calculate(tptemp,temp)"></div><br>
+        </div>
+        <script type = "text/javascript">
+            function calculate(tptemp,temp){
+                var tptemp = document.getElementById("tptemp");
+                var temp = document.getElementById("temp").value;
+                if(temp==''){
+                    document.getElementById('c').innerHTML = "Undefined";
+                    document.getElementById('f').innerHTML = "Undefined";
+                    document.getElementById('k').innerHTML = "Undefined";
+                    document.getElementById('r').innerHTML = "Undefined";
+                    document.getElementById('re').innerHTML = "Undefined";
+                }
+                else{
+                    var temp1,temp2,temp3,temp4,temp5;
+                    if(tptemp.value=="ctemp"){
+                        temp1 = temp;
+                        temp2 = (1.8*temp)+32;
+                        temp3 = (temp*1)+273;
+                        temp4 = ((1.8*temp)+491.67).toFixed(2);
+                        temp5 = 0.8*temp;
+                    }
+                    else if(tptemp.value=="ftemp"){
+                        temp1 = (temp-32)*(5/9);
+                        temp2 = temp;
+                        temp3 = ((temp-32)*(5/9))+273.15;
+                        temp4 = temp+459.67;
+                        temp5 = (temp-32)*(4/9);
+                    }
+                    else if(tptemp.value=="ktemp"){
+                        if(temp>0){
+                            temp1 = temp-273;
+                            temp2 = ((temp-273.15)*1.8)+32;
+                            temp3 = temp;
+                            temp4 = 1.8*temp;
+                            temp5 = 0.8*(temp-273.15);
+                        }
+                    }
+                    else if(tptemp.value=="rtemp"){
+                        temp1 = (temp-491.67)*(5/9);
+                        temp2 = temp-459.67;
+                        temp3 = temp*(5/9);
+                        temp4 = temp;
+                        temp5 = (4/9)*(temp-491.67);
+                    }
+                    else if(tptemp.value=="retemp"){
+                        temp1 = 1.25*temp;
+                        temp2 = (2.25*temp)+32;
+                        temp3 = (temp+273)*1.25;
+                        temp4 = (2.25*temp)+491.67;
+                        temp5 = temp;
+                    }
+                    if(temp1==null){
+                        document.getElementById('c').innerHTML = "Not Possible";
+                    }
+                    else{
+                        document.getElementById('c').innerHTML = parseFloat(temp1).toFixed(2);
+                    }
+                    if(temp2==null){
+                        document.getElementById('f').innerHTML = "Not Possible";
+                    }
+                    else{
+                        document.getElementById('f').innerHTML = parseFloat(temp2).toFixed(2);
+                    }
+                    if(temp3>0){
+                        document.getElementById('k').innerHTML = parseFloat(temp3).toFixed(2);
+                    }
+                    else{
+                        document.getElementById('k').innerHTML = "Not Possible";
+                    }
+                    if(temp4==null){
+                        document.getElementById('r').innerHTML = "Not Possible";
+                    }
+                    else{
+                        document.getElementById('r').innerHTML = parseFloat(temp4).toFixed(2);
+                    }
+                    if(temp5==null){
+                        document.getElementById('re').innerHTML = "Not Possible";
+                    }
+                    else{
+                        document.getElementById('re').innerHTML = parseFloat(temp5).toFixed(2);
+                    }
+                }
+            }
+        </script>
+        <div class="grid">
+            <div class="card2">
+                <div class="grid-container1">
+                    <div class="grid-item1">Celsius &#176C</div>
+                    <div class="grid-item2" id="c">Undefined</div>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="grid-container1">
+                    <div class="grid-item1">Fahrenheit &#176F</div>
+                    <div class="grid-item2" id="f">Undefined</div>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="grid-container1">
+                    <div class="grid-item1">Kelvin K</div>
+                    <div class="grid-item2" id="k">Undefined</div>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="grid-container1">
+                    <div class="grid-item1">Rankine &#176R</div>
+                    <div class="grid-item2" id="r">Undefined</div>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="grid-container1">
+                    <div class="grid-item1">Reaumur &#176Re</div>
+                    <div class="grid-item2" id="re">Undefined</div>
+                </div>
+            </div>
+            <div class="card2">
+                <b>Created by
+                <a href="https://www.linkedin.com/in/arihant-jain-01/"> Arihant Jain</a></b>
+            </div>
+        </div>
+    </body>
+</html>
