@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="icon" href="https://img.icons8.com/nolan/96/calendar.png">
+        <style>
+            @media(max-width: 599.99px){
+                .grid-container {
+                    display: grid;
+                    justify-content: left;
+                    grid-template-rows: auto auto;
+                    grid-template-columns: 50% 50%;
+                }
+                .grid-item {
+                    padding: 5px;
+                    font-size: larger;
+                }
+                .grid-container1 {
+                    display: grid;
+                    justify-content: center;
+                    grid-template-columns: 33% 33% 33%;
+                }
+                .grid{
+                    display: grid;
+                    justify-content: center;
+                    row-gap: 6px;
+                    padding-top: 10%;
+                    grid-template-columns: 100%;
+                    grid-template-rows: auto auto auto;
+                }
+                .card1 {
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                    padding: 10px;
+                    width: 100%;
+                    height: 85px;
+                    font-size: larger;
+                    border-radius: 10px;
+                    background-color: white;
+                }
+                .card2 {
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                    padding: 8px;
+                    font-size: larger;
+                    width: 100%;
+                    border-radius: 10px;
+                    background-color: white;
+                }
+                .button {
+                    background-color: white;
+                    color: black;
+                    width: 99%;
+                    padding: 8px;
+                    border-radius: 10px;
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+                input[type='date']{
+                    width: 100%;
+                    height: 30px;
+                    border-radius: 10px;
+                    background-color: white;
+                }
+            }
+            @media(min-width: 600px){
+                .grid-container {
+                    display: grid;
+                    justify-content: center;
+                    grid-template-rows: auto auto;
+                    grid-template-columns: auto auto;
+                }
+                .grid-item {
+                    padding: 5px;
+                    text-align: center;
+                }
+                .grid-container1 {
+                    display: grid;
+                    grid-template-columns: 72px 72px 72px;
+                }
+                .grid{
+                    display: grid;
+                    justify-content: center;
+                    row-gap: 5px;
+                    padding-top: 70px;
+                    grid-template-rows: auto auto auto;
+                }
+                .card1 {
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                    padding: 10px;
+                    width: 233px;
+                    height: 75px;
+                    border-radius: 10px;
+                    background-color: white;
+                }
+                .card2 {
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                    padding: 8px;
+                    font-size: 15px;
+                    width: 233px;
+                    border-radius: 10px;
+                    background-color: white;
+                }
+                .horizontal-center {
+                    position: absolute;
+                    left: 50%;
+                    -ms-transform: translateX(-50%);
+                    transform: translateX(-50%);
+                }
+                .button {
+                    background-color: white;
+                    color: black;
+                    width: 233px;
+                    height: 40px;
+                    padding: 8px;
+                    border-radius: 10px;
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+                input[type='date']{
+                    width: 150px;
+                    height: 25px;
+                    border-radius: 10px;
+                }
+            }
+            .grid-item1 {
+                padding: 4px;
+                text-align: center;
+            }
+            .card1:hover {
+                box-shadow: 0 8px 8px 0 black;
+                cursor: default;
+            }
+            .card2:hover {
+                box-shadow: 0 8px 8px 0 black;
+                cursor: default;
+            }
+            .button:hover {
+                box-shadow: 0 2px 2px 0 black;
+            }
+        </style>
+    </head>
+    <body style="background-color: cornflowerblue;align-content: center;padding: 7px;">
+        <h1 style="color:black;text-align: center;padding: 10px;">Date Difference</h1>
+        <div class="grid-container">
+            <div class="grid-item"><b>From</b></div>
+            <div class="grid-item"><input type="date" id="birthday" name="birthday"></div>
+            <div class="grid-item"><b>To</b></div>  
+            <div class="grid-item"><input type="date" id="today" name="today"></div><br>
+        </div>
+        <script type = "text/javascript">
+            function calculate(date2,date1){
+                var date1 = new Date(document.getElementById("birthday").value);
+                var date2 = new Date(document.getElementById("today").value);
+                if(isNaN(date1) || isNaN(date2)){
+                    alert("Enter both the parameters!");
+                }
+                else if(date1 > date2){
+                    alert("Enter the correct parameters!");
+                }
+                else{
+                    var now = date2.getTime() - date1.getTime();
+                    var age = now / (1000 * 3600 * 24 * 365);
+                    var year = parseInt(age);
+                    var months = (age - year)*12;
+                    var month = parseInt(months);
+                    var day = parseInt((months - month)*30);
+                    document.getElementById('year').innerHTML = year;
+                    if(date1.getDate()==date2.getDate() && date1.getMonth()==date2.getMonth()){
+                        document.getElementById('month').innerHTML = 0;
+                        document.getElementById('day').innerHTML = 0;
+                    }
+                    else{
+                        document.getElementById('month').innerHTML = month;
+                        document.getElementById('day').innerHTML = day;
+                    }
+                }
+            }
+        </script>
+        <div class="horizontal-center">
+            <button class="button align-items-center d-flex justify-content-center" onclick="calculate(today,birthday)">Calculate</button>
+        </div>
+        <div class="grid">
+            <div class="card2 align-items-center d-flex justify-content-center"><b>Difference</b></div>
+            <div class="card1">
+                <div class="grid-container1">
+                    <div class="grid-item1">
+                        <b>Years</b>
+                        <div id="year">0</div>
+                    </div>
+                    <div class="grid-item1">
+                        <b>Months</b>
+                        <div id="month">0</div>
+                    </div>
+                    <div class="grid-item1">
+                        <b>Days</b>
+                        <div id="day">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card2 align-items-center d-flex justify-content-center">
+                <b>Created by
+                <a href="https://www.linkedin.com/in/arihant-jain-01/"> Arihant Jain</a></b>
+            </div>
+        </div>
+    </body>
+</html>
