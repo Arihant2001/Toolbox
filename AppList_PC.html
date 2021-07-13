@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>App List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="icon" href="https://img.icons8.com/nolan/48/blockchain-technology.png">
+        <style>
+            @media(max-width: 599.99px){
+                .grid{
+                    display: grid;
+                    grid-template-rows: 10% 32% 32% 32% 32% 10%;
+                    gap: 6px;
+                }
+                .grid-item1{   
+                    grid-column-start: 1;
+                    grid-column-end: 5;
+                    font-size: 30px;
+                    color: purple;
+                }
+                .grid-item2{
+                    grid-column-start: 1;
+                    grid-column-end: 5;
+                    font-size: 20px;
+                }
+                .card {
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 100%;
+                    font-weight: bolder;
+                    border-radius: 13px;
+                    background-color: white;
+                }
+                .card1 {
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                    width: 100%;
+                    height: 100%;
+                    font-weight: bold;
+                    border-radius: 13px;
+                    background-color: white;
+                }
+                img{
+                    align-items: center;
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+            @media(min-width: 600px){
+                .grid{
+                    display: grid;
+                    justify-content: center;
+                    grid-template-columns: auto auto auto auto;
+                    grid-template-rows: auto auto auto auto;
+                    gap: 5px;
+                }
+                .grid-item1{
+                    grid-column-start: 1;
+                    grid-column-end: 5;
+                    font-size: 30px;
+                    color: purple;
+                }
+                .grid-item2{
+                    grid-column-start: 1;
+                    grid-column-end: 5;
+                }
+                .card {
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                    width: 140px;
+                    height: 130px;
+                    font-size: 20px;
+                    font-weight: bolder;
+                    border-radius: 10px;
+                    background-color: white;
+                }
+                .card1 {
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                    width: 575px;
+                    height: 45px;
+                    font-weight: bold;
+                    line-height: 50px;
+                    border-radius: 10px;
+                    background-color: white;
+                }
+                img{
+                    align-items: center;
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+            .card:hover {
+                box-shadow: 0 8px 8px 0 black;
+                cursor: pointer;
+            }
+            .card1:hover {
+                box-shadow: 0 8px 8px 0 black;
+            }
+            a:link {
+                color: mediumblue;
+                text-decoration: none;
+            }
+            a:visited {
+                color: mediumblue;
+                text-decoration: none;
+            }
+            a:hover {
+                color: deepskyblue;
+                text-decoration: none;
+            }
+            a:active {
+                color: mediumblue;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body style="background-color: deepskyblue;align-content: center;padding: 7px;">
+        <div class="grid">
+            <div class="grid-item1">
+                <div class="card1 align-items-center d-flex justify-content-center"><b>App List</b></div>
+            </div>
+            <a href="https://calendar.google.com/calendar/u/0/r?cid=N3Iwc20wOTBibW41cGVjc2xiZnNvMmF0ZjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&pli=1" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/google-calendar.png">
+                    Calendar
+                </div>
+            </a>
+            <a href="https://classroom.google.com/u/0/h" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/google-classroom.png">
+                    Classroom
+                </div>
+            </a> 
+            <a href="https://www.google.com/search?q=google+dictionary&rlz=1C1CHBF_enIN865IN865&oq=google+dic&aqs=chrome.1.69i57j35i39j0i131i433j0l4j0i10j0i131i433j0.4821j0j7&sourceid=chrome&ie=UTF-8" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/book.png">
+                    Dictionary
+                </div>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/facebook.png">
+                    Facebook
+                </div>
+            </a>
+            <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/gmail.png">
+                    Gmail
+                </div>
+            </a>
+            <a href="https://docs.google.com/document/u/0/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/google-docs.png">
+                    Google Docs
+                </div>
+            </a>
+            <a href="https://drive.google.com/drive/u/0/my-drive" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/google-drive.png">
+                    Google Drive
+                </div>
+            </a>
+            <a href="https://meet.google.com/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/video-conference.png">
+                    Google Meet
+                </div>
+            </a>      
+            <a href="https://www.instagram.com/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/instagram-new.png">
+                    Instagram
+                </div>
+            </a>
+            <a href="https://www.linkedin.com/feed/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/linkedin.png">
+                    LinkedIn
+                </div>
+            </a>
+            <a href="Toolbox/toolbox.html" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/box.png">
+                    Toolbox
+                </div>
+            </a>
+            <a href="https://www.messenger.com/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/facebook-messenger.png">
+                    Messenger
+                </div>
+            </a>
+            <a href="https://open.spotify.com/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/spotify.png">
+                    Spotify
+                </div>
+            </a>
+            <a href="https://web.whatsapp.com/" target="_blank" onclick="window.open('whatsapp://app');">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/whatsapp.png">
+                    WhatsApp
+                </div>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/youtube-play.png">
+                    YouTube
+                </div>
+            </a>
+            <a href="https://zoom.us/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/zoom.png">
+                    Zoom
+                </div>
+            </a>
+            <div class="grid-item2">
+                <div class="card1 align-items-center d-flex justify-content-center">
+                    <b>Created by
+                    <a href="https://www.linkedin.com/in/arihant-jain-01/"> Arihant Jain</a></b>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
