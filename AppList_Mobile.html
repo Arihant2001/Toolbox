@@ -9,7 +9,8 @@
             @media(max-width: 409.99px){
                 .grid{
                     display: grid;
-                    grid-template-rows: 7% 17% 17% 17% 17% 17% 17% 7%;
+                    grid-template-rows: 11% 36% 36% 36% 36% 11%;
+                    grid-template-columns: 33% 32% 32%;
                     gap: 6px;
                     height: 100%;
                 }
@@ -46,16 +47,11 @@
                     border-radius: 13px;
                     background-color: white;
                 }
-                img{
-                    align-items: center;
-                    height: 50px;
-                    width: 50px;
-                }
             }
             @media only screen and (min-width: 410px) and (max-width: 999.99px) {
                 .grid{
                     display: grid;
-                    grid-template-rows: 15% 27% 30% 27% 15%;
+                    grid-template-rows: 18% 43% 43% 18%;
                     gap: 5px;
                 }
                 .grid-item1{ 
@@ -91,11 +87,6 @@
                     border-radius: 13px;
                     background-color: white;
                 }
-                img{
-                    align-items: center;
-                    height: 25px;
-                    width: 25px;
-                }
             }
             @media (min-width: 1000px) {
                 .grid{
@@ -122,6 +113,7 @@
                     height: 130px;
                     font-size: 20px;
                     font-weight: bolder;
+                    text-align: center;
                     border-radius: 10px;
                     background-color: white;
                 }
@@ -135,11 +127,6 @@
                     border-radius: 10px;
                     background-color: white;
                 }
-                img{
-                    align-items: center;
-                    height: 50px;
-                    width: 50px;
-                }
             }
             .card:hover {
                 box-shadow: 0 8px 8px 0 black;
@@ -147,6 +134,11 @@
             }
             .card1:hover {
                 box-shadow: 0 8px 8px 0 black;
+            }
+            img{
+                align-items: center;
+                height: 50px;
+                width: 50px;
             }
             a:link {
                 color: mediumblue;
@@ -171,19 +163,7 @@
             <div class="grid-item1">
                 <div class="card1 align-items-center d-flex justify-content-center"><b>App List</b></div>
             </div>
-            <a href="https://drive.google.com/file/d/1Ra2wEQm-ZKvpmLNwYTmoOAqfQ2aHfaYl/view?usp=sharing">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/birthday.png">
-                    Age
-                </div>
-            </a>
-            <a href="https://drive.google.com/file/d/1yA1Y-CaIilDsuXdcLFB_lC0GX5qwcOqb/view?usp=sharing">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/standing-man--v1.png">
-                    BMI
-                </div>
-            </a> 
-            <a href="https://calendar.google.com/calendar/u/0/r?cid=N3Iwc20wOTBibW41cGVjc2xiZnNvMmF0ZjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&pli=1" target="_blank">
+            <a class="nomobile" href="https://calendar.google.com/calendar/u/0/r?cid=N3Iwc20wOTBibW41cGVjc2xiZnNvMmF0ZjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&pli=1" target="_blank">
                 <div class="card align-items-center d-flex justify-content-center">
                     <img src="https://img.icons8.com/nolan/96/google-calendar.png">
                     Calendar
@@ -194,17 +174,11 @@
                     <img src="https://img.icons8.com/nolan/96/google-classroom.png">
                     Classroom
                 </div>
-            </a>
+            </a> 
             <a href="https://www.google.com/search?q=google+dictionary&rlz=1C1CHBF_enIN865IN865&oq=google+dic&aqs=chrome.1.69i57j35i39j0i131i433j0l4j0i10j0i131i433j0.4821j0j7&sourceid=chrome&ie=UTF-8" target="_blank">
                 <div class="card align-items-center d-flex justify-content-center">
                     <img src="https://img.icons8.com/nolan/96/book.png">
                     Dictionary
-                </div>
-            </a>
-            <a href="https://drive.google.com/file/d/1WuoeicbdlimVuN7OKBzQ79SwhW6e8ij7/view?usp=sharing">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/increase-discount.png">
-                    Discount
                 </div>
             </a>
             <a href="https://www.facebook.com/" target="_blank">
@@ -219,6 +193,18 @@
                     GitHub
                 </div>
             </a>
+            <a class="nomobile" href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/gmail.png">
+                    Gmail
+                </div>
+            </a>
+            <a class="nomobile" href="https://docs.google.com/document/u/0/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/google-docs.png">
+                    Google Docs
+                </div>
+            </a>
             <a href="https://drive.google.com/drive/u/0/my-drive" target="_blank">
                 <div class="card align-items-center d-flex justify-content-center">
                     <img src="https://img.icons8.com/nolan/96/google-drive.png">
@@ -230,23 +216,29 @@
                     <img src="https://img.icons8.com/nolan/96/video-conference.png">
                     Google Meet
                 </div>
-            </a>      
+            </a>
+            <a class="nomobile" href="https://docs.google.com/spreadsheets/u/0/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/google-sheets.png">
+                    Google Sheets
+                </div>
+            </a>
             <a href="https://www.instagram.com/" target="_blank">
                 <div class="card align-items-center d-flex justify-content-center">
                     <img src="https://img.icons8.com/nolan/96/instagram-new.png">
                     Instagram
                 </div>
             </a>
-            <a href="https://drive.google.com/file/d/1r-3cTW1bM_eCGYQ4GyW6b2oCMZ1ClFhJ/view?usp=sharing" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/discount.png">
-                    Interest
-                </div>
-            </a>
             <a href="https://www.linkedin.com/feed/" target="_blank">
                 <div class="card align-items-center d-flex justify-content-center">
                     <img src="https://img.icons8.com/nolan/96/linkedin.png">
                     LinkedIn
+                </div>
+            </a>
+            <a class="nomobile" href="https://www.messenger.com/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/facebook-messenger.png">
+                    Messenger
                 </div>
             </a>
             <a href="https://movie-hub-app.herokuapp.com/" target="_blank">
@@ -267,22 +259,22 @@
                     Spotify
                 </div>
             </a>
-            <a href="https://drive.google.com/file/d/1ZCFMY3TrYddQVJXRRsXrSYSQhFSiNIqn/view?usp=sharing" target="_blank">
+            <a href="https://arihant2001.github.io/Toolbox/toolbox.html" target="_blank">
                 <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/temperature.png">
-                    Temperature
-                </div>
-            </a>
-            <a href="https://drive.google.com/file/d/1KS4pYG4XVgEh8GK5m14efRPr7caJRCBF/view?usp=sharing">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/calendar.png">
-                    Time Gap
+                    <img src="https://img.icons8.com/nolan/96/box.png">
+                    Toolbox
                 </div>
             </a>
             <a class="nomobile" href="https://web.whatsapp.com/" target="_blank" onclick="window.open('whatsapp://app');">
                 <div class="card align-items-center d-flex justify-content-center">
                     <img src="https://img.icons8.com/nolan/96/whatsapp.png">
                     WhatsApp
+                </div>
+            </a>
+            <a class="nomobile" href="https://www.youtube.com/" target="_blank">
+                <div class="card align-items-center d-flex justify-content-center">
+                    <img src="https://img.icons8.com/nolan/96/youtube-play.png">
+                    YouTube
                 </div>
             </a>
             <a href="https://zoom.us/" target="_blank">
