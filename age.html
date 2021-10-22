@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="icon" href="https://img.icons8.com/nolan/48/birthday.png">
+        <link rel="stylesheet" href="diagonal_gradient.css">
         <style>
             @media(max-width: 599.99px){
                 .grid-container {
@@ -14,16 +15,20 @@
                 }
                 .grid-item {
                     padding: 5px;
+                    padding-left: 10px;
+                    padding-right: 10px;
                     text-align: left;
                     font-size: larger;
                 }
                 .grid-itemxtra{
                     padding: 5px;
+                    padding-left: 10px;
+                    padding-right: 10px;
                     text-align: right;
                 }
                 .grid-container1 {
                     display: grid;
-                    padding: 5px;
+                    padding: 10px;
                     row-gap: 4px;
                     column-gap: 4px;
                 }
@@ -111,7 +116,8 @@
                 .button {
                     background-color: white;
                     color: black;
-                    width: 99%;
+                    width: 100%;
+                    justify-content: center;
                     padding: 11px;
                     border-radius: 15px;
                     text-align: center;
@@ -253,28 +259,61 @@
                 display: grid;
                 grid-template-columns: auto auto auto auto;
             }
+            a:hover {
+                color: deepskyblue;
+                text-decoration: none;
+            }
             .card1:hover {
-                box-shadow: 0 8px 8px 0 black;
                 cursor: default;
             }
             .card1a:hover {
-                box-shadow: 0 8px 8px 0 black;
                 cursor: default;
             }
             .card2:hover {
-                box-shadow: 0 8px 8px 0 black;
                 cursor: default;
             }
             .card3:hover {
-                box-shadow: 0 8px 8px 0 black;
                 cursor: default;
             }
             .button:hover {
                 box-shadow: 0 2px 2px 0 black;
+                transition: transform 0.5s;
+                transform: scale(1.01);
+            }
+            .nav_container{
+                display: grid;
+                height: 55px;
+                background: white;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                justify-content: space-between;
+                grid-template-columns: auto auto auto auto;
+                align-items: center;
+                padding-left: 20px;
+                padding-right: 20px;
+                font-size: 20px;
+            }
+            .nav_container:hover {
+                box-shadow: 0 4px 4px 0 black;
+                cursor: default;
+                transition: 0.1s;
             }
         </style>
     </head>
-    <body style="background-color: mediumslateblue;align-content: center;padding: 5px;">
+    <body>
+        <div class="nav_container">
+            <a href="https://arihant2001.github.io/Toolbox/AppList_PC.html">
+                <img src="https://img.icons8.com/nolan/40/blockchain-technology.png"
+            </a>
+            <a href="https://arihant2001.github.io/Toolbox/toolbox.html">
+                <img src="https://img.icons8.com/nolan/40/box.png">
+            </a>
+            <a href="https://arihant2001.github.io/Toolbox/toolbox.html">
+                <b>Age</b>
+            </a>
+            <a href="https://www.linkedin.com/in/arihant-jain-01/" target="_blank">About</a>
+        </div>
+
         <h1 style="color: lightsalmon;text-align: center;padding: 10px;">Age Calculator</h1>
         <div class="grid-container">
             <div class="grid-item"><b>Date of Birth</b></div>
@@ -346,7 +385,7 @@
                 }
             }
         </script>
-        <div class="horizontal-center">
+        <div class="horizontal-center" style="padding: 10px;">
             <button class="button" onclick="calculate(today,birthday)">Calculate</button><br>
         </div><br>
         <div class="grid-container1">
@@ -394,12 +433,6 @@
             </div>
             <div class="card3">
                 Days<br><div id="td">0</div>
-            </div>
-            <div class="grid-itemsum">
-                <div class="card2 align-items-center d-flex justify-content-center">
-                    Created by&nbsp;
-                    <a href="https://www.linkedin.com/in/arihant-jain-01/">Arihant Jain</a>
-                </div>
             </div>
         </div>
     </body>
