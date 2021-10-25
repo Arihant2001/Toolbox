@@ -6,10 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="icon" href="https://img.icons8.com/nolan/48/standing-man--v1.png">
+        <link rel="stylesheet" href="diagonal_gradient.css">
+        <link rel="stylesheet" href="nav_bar.css">
         <style>
             @media(max-width: 599.99px){
                 .grid-container {
                     display: grid;
+                    padding: 10px 0 0 5px;
                     justify-content: left;
                     grid-template-columns: 30% 30% 40%;
                     grid-template-rows: auto auto;
@@ -88,10 +91,11 @@
                 }
                 .grid{
                     display: grid;
+                    padding: 10px;
                     justify-content: center;
                     row-gap: 5px;
                     grid-template-columns: 100%;
-                    grid-template-rows: auto auto auto auto;
+                    grid-template-rows: auto auto auto;
                 }
                 .card1 {
                     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -118,6 +122,7 @@
             @media(min-width: 600px){
                 .grid-container {
                     display: grid;
+                    padding-top: 10px;
                     justify-content: center;
                     grid-template-columns: auto auto auto;
                     grid-template-rows: auto auto;
@@ -186,7 +191,7 @@
                     display: grid;
                     justify-content: center;
                     row-gap: 5px;
-                    grid-template-rows: auto auto auto auto;
+                    grid-template-rows: auto auto auto;
                 }
                 .card1 {
                     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -223,18 +228,28 @@
                 text-align: left;
                 font-size: 12px;
             }
-            .card1:hover {
-                box-shadow: 0 8px 8px 0 black;
-                cursor: default;
-            }
-            .card2:hover {
-                box-shadow: 0 8px 8px 0 black;
+            .card1:hover, .card2:hover {
                 cursor: default;
             }
         </style>
     </head>
-    <body style="background-color: darkorchid;align-content: center;padding: 7px;">
-        <h1 style="color:black;text-align: center;padding: 10px;font-size: xx-large;"><b>Body-Mass Index</b></h1>
+    <body>
+        <div class="nav_container">
+            <div class="nav_grid">
+                <a href="https://arihant2001.github.io/Toolbox/AppList_PC.html">
+                    <img 
+                        src="https://img.icons8.com/nolan/40/blockchain-technology.png">
+                </a>
+                <!--<a href="https://arihant2001.github.io/Toolbox/toolbox.html">
+                    <img src="https://img.icons8.com/nolan/40/box.png">
+                </a>-->
+            </div>
+            <a href="https://arihant2001.github.io/Toolbox/bmi.html">
+                <b>BMI</b>
+            </a>
+            <a href="https://www.linkedin.com/in/arihant-jain-01/" target="_blank">About</a>
+        </div>
+        
         <div class="grid-container">
             <div class="grid-item"><b>Weight</b></div>
             <div class="grid-item"><input type="number" id="weight" min="0" oninput="calculate(weight,height,tpweight,tpheight)"></div>
@@ -345,10 +360,6 @@
                     <div class="grid-item2" style="text-align: left;font-size: 13px;"><b>25.0</b></div>
                     <div class="grid-item2" style="text-align: left;font-size: 13px;"><b>30.0</b></div>
                 </div>
-            </div>
-            <div class="card2">
-                <b>Created by
-                <a href="https://www.linkedin.com/in/arihant-jain-01/"> Arihant Jain</a></b>
             </div>
         </div>
     </body>

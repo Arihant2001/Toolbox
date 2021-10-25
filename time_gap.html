@@ -5,10 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="icon" href="https://img.icons8.com/nolan/96/calendar.png">
+        <link rel="stylesheet" href="diagonal_gradient.css">
+        <link rel="stylesheet" href="nav_bar.css">
         <style>
             @media(max-width: 599.99px){
                 .grid-container {
                     display: grid;
+                    padding: 10px 5px 0 5px;
                     justify-content: left;
                     grid-template-rows: auto auto;
                     grid-template-columns: 50% 50%;
@@ -26,9 +29,9 @@
                     display: grid;
                     justify-content: center;
                     row-gap: 6px;
-                    padding-top: 10%;
+                    padding: 10% 10px 0 10px;
                     grid-template-columns: 100%;
-                    grid-template-rows: auto auto auto;
+                    grid-template-rows: auto auto;
                 }
                 .card1 {
                     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -52,9 +55,11 @@
                 .button {
                     background-color: white;
                     color: black;
-                    width: 99%;
-                    padding: 8px;
-                    border-radius: 10px;
+                    width: 100%;
+                    justify-content: center;
+                    padding: 11px;
+                    border-radius: 15px;
+                    text-align: center;
                     font-size: 16px;
                     cursor: pointer;
                 }
@@ -68,6 +73,7 @@
             @media(min-width: 600px){
                 .grid-container {
                     display: grid;
+                    padding-top: 10px;
                     justify-content: center;
                     grid-template-rows: auto auto;
                     grid-template-columns: auto auto;
@@ -84,8 +90,8 @@
                     display: grid;
                     justify-content: center;
                     row-gap: 5px;
-                    padding-top: 70px;
-                    grid-template-rows: auto auto auto;
+                    padding-top: 90px;
+                    grid-template-rows: auto auto;
                 }
                 .card1 {
                     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -115,9 +121,9 @@
                     background-color: white;
                     color: black;
                     width: 233px;
-                    height: 40px;
                     padding: 8px;
                     border-radius: 10px;
+                    text-align: center;
                     font-size: 16px;
                     cursor: pointer;
                 }
@@ -131,21 +137,37 @@
                 padding: 4px;
                 text-align: center;
             }
-            .card1:hover {
-                box-shadow: 0 8px 8px 0 black;
-                cursor: default;
+            a:hover {
+                color: deepskyblue;
+                text-decoration: none;
             }
-            .card2:hover {
-                box-shadow: 0 8px 8px 0 black;
+            .card1:hover, .card2:hover {
                 cursor: default;
             }
             .button:hover {
                 box-shadow: 0 2px 2px 0 black;
+                transition: 0.5s;
+                transform: scale(1.01);
             }
         </style>
     </head>
-    <body style="background-color: cornflowerblue;align-content: center;padding: 7px;">
-        <h1 style="color:black;text-align: center;padding: 10px;">Date Difference</h1>
+    <body>
+        <div class="nav_container">
+            <div class="nav_grid">
+                <a href="https://arihant2001.github.io/Toolbox/AppList_PC.html">
+                    <img 
+                        src="https://img.icons8.com/nolan/40/blockchain-technology.png">
+                </a>
+                <!--<a href="https://arihant2001.github.io/Toolbox/toolbox.html">
+                    <img src="https://img.icons8.com/nolan/40/box.png">
+                </a>-->
+            </div>
+            <a href="https://arihant2001.github.io/Toolbox/time_gap.html">
+                <b>Time</b>
+            </a>
+            <a href="https://www.linkedin.com/in/arihant-jain-01/" target="_blank">About</a>
+        </div>
+
         <div class="grid-container">
             <div class="grid-item"><b>From</b></div>
             <div class="grid-item"><input type="date" id="birthday" name="birthday"></div>
@@ -181,8 +203,8 @@
                 }
             }
         </script>
-        <div class="horizontal-center">
-            <button class="button align-items-center d-flex justify-content-center" onclick="calculate(today,birthday)">Calculate</button>
+        <div class="horizontal-center" style="padding: 10px;">
+            <button class="button" onclick="calculate(today,birthday)">Calculate</button>
         </div>
         <div class="grid">
             <div class="card2 align-items-center d-flex justify-content-center"><b>Difference</b></div>
@@ -201,10 +223,6 @@
                         <div id="day">0</div>
                     </div>
                 </div>
-            </div>
-            <div class="card2 align-items-center d-flex justify-content-center">
-                <b>Created by
-                <a href="https://www.linkedin.com/in/arihant-jain-01/"> Arihant Jain</a></b>
             </div>
         </div>
     </body>

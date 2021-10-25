@@ -7,7 +7,13 @@
         <link rel="icon" href="https://img.icons8.com/nolan/48/blockchain-technology.png">
         <link rel="stylesheet" href="diagonal_gradient.css">
         <style>
-            @media(max-width: 979.99px){
+            @media(max-width: 1099.99px){
+                .grid_max{
+                    display: grid;
+                    padding: 10px;
+                    gap: 10px;
+                    grid-template-columns: 11% 89%;
+                }
                 .grid{
                     display: flex;
                     flex-wrap: wrap;
@@ -26,25 +32,92 @@
                     border-radius: 10px;
                     background-color: white;
                 }
+                .small, .sidenav{
+                    display: none;
+                }
+                .card_nav {
+                    display: grid;
+                    height: 88%;
+                    grid-template-rows: auto auto auto auto auto auto;
+                    position: fixed;
+                    top: 65px;
+                    left: 5px;
+                    padding: 30px 0 20px 0;
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    width: 70px;
+                    border-radius: 10px;
+                    background-color: white;
+                    text-align: center;
+                }
             }
-            @media(min-width: 980px){
+            @media(min-width: 1100px){
+                .grid_max{
+                    display: grid;
+                    padding: 10px;
+                    gap: 10px;
+                    grid-template-columns: auto auto;
+                }
                 .grid{
                     display: grid;
-                    justify-content: center;
-                    grid-template-columns: auto auto auto auto auto auto;
+                    justify-content: flex-start;
+                    grid-template-columns: auto auto auto auto auto;
                     grid-template-rows: auto auto auto auto;
-                    padding: 10px;
                     gap: 10px;
                     transition: 0.5s;
                 }
                 .card {
                     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-                    width: 150px;
+                    width: 145px;
                     height: 135px;
                     font-size: 20px;
                     font-weight: bolder;
                     border-radius: 10px;
                     background-color: white;
+                }
+                .large{
+                    display: none;
+                }
+                .card_nav {
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    width: 70px;
+                    height: 50px;
+                    border-radius: 10px;
+                    background-color: white;
+                    cursor: pointer;
+                    text-align: center;
+                }
+                .sidenav {
+                    z-index: 1;
+                    overflow-x: hidden;
+                    transition: 0.5s;
+                    font-size: 20px;
+                    height: 88%;
+                    width: 0;
+                    position: fixed;
+                    top: 65px;
+                    left: 5px;
+                    padding-top: 5px;
+                    background-color: white;
+                    border-radius: 10px;
+                }
+                .sidenav a {
+                    padding: 8px 8px 8px 8px;
+                    display: block;
+                    transition: 0.3s;
+                } 
+                #main {
+                    transition: .5s;
+                }
+                .sidenav_title{
+                    display: grid;                
+                    justify-content: space-around;
+                    grid-template-columns: auto auto;
+                    font-size: 30px;
+                }
+                .sidenav_body{
+                    display: grid;               
+                    grid-template-columns: auto auto;
+                    padding-left: 20px;
                 }
             }
             .card:hover {
@@ -92,6 +165,9 @@
                 cursor: default;
                 transition: 0.1s;
             }
+            hr:hover{
+                cursor: default;
+            }
         </style>
     </head>
     <body>
@@ -107,133 +183,256 @@
             <a href="https://www.linkedin.com/in/arihant-jain-01/" target="_blank">About</a>
         </div>
 
-        <div class="grid">
-            <a href="https://calendar.google.com/calendar/u/0/r?cid=N3Iwc20wOTBibW41cGVjc2xiZnNvMmF0ZjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&pli=1" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/google-calendar.png">
-                    Calendar
+        <div class="grid_max">
+            <div id="mySidenav" class="sidenav">
+                <div class="sidenav_title align-items-center">
+                    <div><b>Toolbox</b></div>
+                    <a onclick="closeNav()" style="font-size: 30px; cursor: pointer;">&times;</a>
                 </div>
-            </a>
-            <a href="https://classroom.google.com/u/0/h" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/google-classroom.png">
-                    Classroom
+                <hr style="width: 90%;">
+                <a href="https://arihant2001.github.io/Toolbox/age.html">
+                    <div class="sidenav_body" style="font-size: 20px;">
+                        <img 
+                            src="https://img.icons8.com/nolan/96/birthday.png"
+                            style="height: 30px; width: 30px;">
+                        Age
+                    </div>
+                </a>
+                <hr style="width: 80%;">
+                <a href="https://arihant2001.github.io/Toolbox/bmi.html">
+                    <div class="sidenav_body" style="font-size: 20px;">
+                        <img 
+                            src="https://img.icons8.com/nolan/96/standing-man--v1.png"
+                            style="height: 30px; width: 30px;">
+                        BMI
+                    </div>
+                </a>
+                <hr style="width: 80%;">
+                <a href="https://arihant2001.github.io/Toolbox/discount.html">
+                    <div class="sidenav_body" style="font-size: 20px;">
+                        <img
+                            src="https://img.icons8.com/nolan/96/increase-discount.png"
+                            style="height: 30px; width: 30px;">
+                        Discount
+                    </div>
+                </a>
+                <hr style="width: 80%;">
+                <a href="https://arihant2001.github.io/Toolbox/interest.html">
+                    <div class="sidenav_body" style="font-size: 20px;">
+                        <img 
+                            src="https://img.icons8.com/nolan/96/discount.png"
+                            style="height: 30px; width: 30px;">
+                        Interest
+                    </div>
+                </a>
+                <hr style="width: 80%;">
+                <a href="https://arihant2001.github.io/Toolbox/temperature.html">
+                    <div class="sidenav_body" style="font-size: 20px;">
+                        <img 
+                            src="https://img.icons8.com/nolan/96/temperature.png"
+                            style="height: 30px; width: 30px;">
+                        Temperature
+                    </div>
+                </a>
+                <hr style="width: 80%;">
+                <a href="https://arihant2001.github.io/Toolbox/time_gap.html">
+                    <div class="sidenav_body" style="font-size: 20px;">
+                        <img 
+                            src="https://img.icons8.com/nolan/96/calendar.png"
+                            style="height: 30px; width: 30px;">
+                        Time
+                    </div>
+                </a>
+            </div>
+            
+            <div class="small">
+                <div class="card_nav align-items-center d-flex justify-content-center" onclick="openNav()" id="main">
+                    <img
+                        src="https://img.icons8.com/nolan/96/box.png"
+                        style="height: 40px; width: 40px;"
+                    >
                 </div>
-            </a> 
-            <a href="https://www.google.com/search?q=google+dictionary&rlz=1C1CHBF_enIN865IN865&oq=google+dic&aqs=chrome.1.69i57j35i39j0i131i433j0l4j0i10j0i131i433j0.4821j0j7&sourceid=chrome&ie=UTF-8" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/book.png">
-                    Dictionary
+            </div>
+
+            <div class="large">
+                <div class="card_nav">
+                    <a href="https://arihant2001.github.io/Toolbox/age.html">
+                        <img 
+                            src="https://img.icons8.com/nolan/96/birthday.png"
+                            style="height: 35px; width: 35px;">
+                    </a>
+                    <hr style="width: 80%;">
+                    <a href="https://arihant2001.github.io/Toolbox/bmi.html">
+                        <img 
+                            src="https://img.icons8.com/nolan/96/standing-man--v1.png"
+                            style="height: 35px; width: 35px;">
+                    </a>
+                    <hr style="width: 80%;">
+                    <a href="https://arihant2001.github.io/Toolbox/discount.html">
+                        <img
+                            src="https://img.icons8.com/nolan/96/increase-discount.png"
+                            style="height: 35px; width: 35px;">
+                    </a>
+                    <hr style="width: 80%;">
+                    <a href="https://arihant2001.github.io/Toolbox/interest.html">
+                        <img
+                            src="https://img.icons8.com/nolan/96/discount.png"
+                            style="height: 35px; width: 35px;">
+                    </a>
+                    <hr style="width: 80%;">
+                    <a href="https://arihant2001.github.io/Toolbox/temperature.html">
+                        <img 
+                            src="https://img.icons8.com/nolan/96/temperature.png"
+                            style="height: 35px; width: 35px;">
+                    </a>
+                    <hr style="width: 80%;">
+                    <a href="https://arihant2001.github.io/Toolbox/time_gap.html">
+                        <img 
+                            src="https://img.icons8.com/nolan/96/calendar.png"
+                            style="height: 35px; width: 35px;">
+                    </a>
                 </div>
-            </a>
-            <a href="https://www.facebook.com/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/facebook.png">
-                    Facebook
-                </div>
-            </a>
-            <a href="https://github.com/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/github.png">
-                    GitHub
-                </div>
-            </a>
-            <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/gmail.png">
-                    Gmail
-                </div>
-            </a>
-            <a href="https://docs.google.com/document/u/0/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/google-docs.png">
-                    Google Docs
-                </div>
-            </a>
-            <a href="https://drive.google.com/drive/u/0/my-drive" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/google-drive.png">
-                    Google Drive
-                </div>
-            </a>
-            <a href="https://meet.google.com/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/video-conference.png">
-                    Google Meet
-                </div>
-            </a>
-            <a href="https://docs.google.com/spreadsheets/u/0/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/google-sheets.png">
-                    Google Sheets
-                </div>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/instagram-new.png">
-                    Instagram
-                </div>
-            </a>
-            <a href="https://www.linkedin.com/feed/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/linkedin.png">
-                    LinkedIn
-                </div>
-            </a>
-            <a href="https://www.messenger.com/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/facebook-messenger.png">
-                    Messenger
-                </div>
-            </a>
-            <a href="https://movie-hub-app.herokuapp.com/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/clapperboard.png">
-                    Movie Hub
-                </div>
-            </a>
-            <a href="https://www.google.com" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/chrome.png">
-                    New Tab
-                </div>
-            </a>
-            <a href="https://open.spotify.com/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/spotify.png">
-                    Spotify
-                </div>
-            </a>
-            <a href="https://web.telegram.org/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/telegram-app.png">                    
-                    Telegram
-                </div>
-            </a>
-            <a href="https://arihant2001.github.io/Toolbox/toolbox.html" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/box.png">
-                    Toolbox
-                </div>
-            </a>
-            <a href="https://web.whatsapp.com/" target="_blank" onclick="window.open('whatsapp://app');">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/whatsapp.png">
-                    WhatsApp
-                </div>
-            </a>
-            <a href="https://www.youtube.com/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/youtube-play.png">
-                    YouTube
-                </div>
-            </a>
-            <a href="https://zoom.us/" target="_blank">
-                <div class="card align-items-center d-flex justify-content-center">
-                    <img src="https://img.icons8.com/nolan/96/zoom.png">
-                    Zoom
-                </div>
-            </a>
+            </div>
+            
+            <script>
+                function openNav() {
+                    document.getElementById("mySidenav").style.width = "220px";
+                    document.getElementById("main").style.marginLeft= "220px";
+                }
+                function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft= "0";
+                }
+            </script>
+
+            <div class="grid">
+                <a href="https://calendar.google.com/calendar/u/0/r?cid=N3Iwc20wOTBibW41cGVjc2xiZnNvMmF0ZjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&pli=1" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/google-calendar.png">
+                        Calendar
+                    </div>
+                </a>
+                <a href="https://classroom.google.com/u/0/h" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/google-classroom.png">
+                        Classroom
+                    </div>
+                </a> 
+                <a href="https://www.google.com/search?q=google+dictionary&rlz=1C1CHBF_enIN865IN865&oq=google+dic&aqs=chrome.1.69i57j35i39j0i131i433j0l4j0i10j0i131i433j0.4821j0j7&sourceid=chrome&ie=UTF-8" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/book.png">
+                        Dictionary
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/facebook.png">
+                        Facebook
+                    </div>
+                </a>
+                <a href="https://github.com/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/github.png">
+                        GitHub
+                    </div>
+                </a>
+                <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/gmail.png">
+                        Gmail
+                    </div>
+                </a>
+                <a href="https://docs.google.com/document/u/0/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/google-docs.png">
+                        Google Docs
+                    </div>
+                </a>
+                <a href="https://drive.google.com/drive/u/0/my-drive" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/google-drive.png">
+                        Google Drive
+                    </div>
+                </a>
+                <a href="https://meet.google.com/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/video-conference.png">
+                        Google Meet
+                    </div>
+                </a>
+                <a href="https://docs.google.com/spreadsheets/u/0/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/google-sheets.png">
+                        Google Sheets
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/instagram-new.png">
+                        Instagram
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/feed/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/linkedin.png">
+                        LinkedIn
+                    </div>
+                </a>
+                <a href="https://www.messenger.com/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/facebook-messenger.png">
+                        Messenger
+                    </div>
+                </a>
+                <a href="https://movie-hub-app.herokuapp.com/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/clapperboard.png">
+                        Movie Hub
+                    </div>
+                </a>
+                <a href="https://www.google.com" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/chrome.png">
+                        New Tab
+                    </div>
+                </a>
+                <a href="https://open.spotify.com/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/spotify.png">
+                        Spotify
+                    </div>
+                </a>
+                <a href="https://web.telegram.org/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/telegram-app.png">                    
+                        Telegram
+                    </div>
+                </a>
+                <!--<a href="https://arihant2001.github.io/Toolbox/toolbox.html" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/box.png">
+                        Toolbox
+                    </div>
+                </a>-->
+                <a href="https://web.whatsapp.com/" target="_blank" onclick="window.open('whatsapp://app');">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/whatsapp.png">
+                        WhatsApp
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/youtube-play.png">
+                        YouTube
+                    </div>
+                </a>
+                <a href="https://zoom.us/" target="_blank">
+                    <div class="card align-items-center d-flex justify-content-center">
+                        <img src="https://img.icons8.com/nolan/96/zoom.png">
+                        Zoom
+                    </div>
+                </a>
+            </div>
         </div>
     </body>
 </html>

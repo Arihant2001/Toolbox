@@ -6,10 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="icon" href="https://img.icons8.com/nolan/96/discount.png">
+        <link rel="stylesheet" href="diagonal_gradient.css">
+        <link rel="stylesheet" href="nav_bar.css">
         <style>
             @media(max-width: 599.99px){
                 .grid-container {
                     display: grid;
+                    padding: 10px 5px 0 5px;
                     justify-content: left;
                     grid-template-rows: auto auto auto auto;
                     grid-template-columns: 60% 40%;
@@ -34,7 +37,7 @@
                     display: grid;
                     justify-content: center;
                     padding-top: 20px;
-                    grid-template-columns: 50% 50%;
+                    grid-template-columns: 47% 47%;
                 }
                 .button1 {
                     background-color: white;
@@ -65,7 +68,7 @@
                     display: grid;
                     justify-content: center;
                     row-gap: 5px;
-                    padding-top: 30px;
+                    padding: 30px 10px 0 10px;
                     grid-template-rows: auto auto;
                     grid-template-columns: 100%;
                 }
@@ -114,6 +117,7 @@
                 }
                 .grid-container {
                     display: grid;
+                    padding-top: 10px;
                     justify-content: center;
                     grid-template-rows: auto auto auto auto;
                     grid-template-columns: auto auto;
@@ -158,8 +162,11 @@
                 position: relative;
             }
             .card2:hover {
-                box-shadow: 0 8px 16px 0 black;
-                cursor: pointer;
+                cursor: default;
+            }
+            a:hover {
+                color: deepskyblue;
+                text-decoration: none;
             }
             .grid-container1 {
                 display: grid;
@@ -178,19 +185,34 @@
             }
             .button1:active {
                 background-color: orange;
-                box-shadow: 0 8px 16px 0 black;
+                box-shadow: 0 8px 8px 0 black;
             }
             .button2:hover {
                 background-color: orange;
             }
             .button2:active {
                 background-color: orange;
-                box-shadow: 0 8px 16px 0 black;
+                box-shadow: 0 8px 8px 0 black;
             }
         </style>
     </head>
-    <body style="background-color: lightblue;align-content: center;padding: 7px;">
-        <h1 style="color:black;text-align: center;font-size: xx-large;"><b>Interest</b></h1>
+    <body>
+        <div class="nav_container">
+            <div class="nav_grid">
+                <a href="https://arihant2001.github.io/Toolbox/AppList_PC.html">
+                    <img 
+                        src="https://img.icons8.com/nolan/40/blockchain-technology.png">
+                </a>
+                <!--<a href="https://arihant2001.github.io/Toolbox/toolbox.html">
+                    <img src="https://img.icons8.com/nolan/40/box.png">
+                </a>-->
+            </div>
+            <a href="https://arihant2001.github.io/Toolbox/interest.html">
+                <b>Interest</b>
+            </a>
+            <a href="https://www.linkedin.com/in/arihant-jain-01/" target="_blank">About</a>
+        </div>
+
         <div class="grid-container">
             <div class="grid-item"><b>Principal</b></div>
             <div class="grid-item"><input type="number" id="principal" min="0"></div>
@@ -292,10 +314,6 @@
                     <div class="grid-item1" id="word">Interest</div>
                     <div class="grid-item2" id="interestcost">Undefined</div>
                 </div>
-            </div>
-            <div class="card2">
-                <b>Created by
-                <a href="https://www.linkedin.com/in/arihant-jain-01/"> Arihant Jain</a></b>
             </div>
         </div>
     </body>

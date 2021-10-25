@@ -1,0 +1,23 @@
+.nav_container{
+    display: grid;
+    height: 55px;
+    background: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    justify-content: space-between;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+}
+.nav_container:hover {
+    box-shadow: 0 4px 4px 0 black;
+    cursor: default;
+    transition: 0.1s;
+}
+/*.nav_grid{
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: auto auto;
+}*/
