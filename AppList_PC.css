@@ -136,8 +136,8 @@ a:active {
 }
 img{
     align-items: center;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 }
 .nav_container{
     position: fixed;
