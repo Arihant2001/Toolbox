@@ -118,20 +118,12 @@
     transition: transform 0.5s;
     transform: scale(1.05);
 }
-a:link {
-    color: mediumblue;
-    text-decoration: none;
-}
-a:visited {
+a:link, a:visited, a:active {
     color: mediumblue;
     text-decoration: none;
 }
 a:hover {
     color: deepskyblue;
-    text-decoration: none;
-}
-a:active {
-    color: mediumblue;
     text-decoration: none;
 }
 img{
